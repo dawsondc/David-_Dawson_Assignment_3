@@ -15,7 +15,7 @@ namespace David__Dawson_Assignment_3.Controllers
 
         public IActionResult Index()
         {
-            return RedirectToAction("Index", "Company");
+            return RedirectToAction("Index", "Person");
         }
 
         public IActionResult Privacy()

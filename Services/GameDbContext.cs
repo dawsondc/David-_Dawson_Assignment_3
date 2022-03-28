@@ -10,8 +10,8 @@ namespace David__Dawson_Assignment_3.Services
 
         }
 
-        public DbSet<CompanyGameDevelopment> CompanyGameDevelopment => Set<CompanyGameDevelopment>();
+        public DbSet<PersonGame> PersonGame => Set<PersonGame>();
         public DbSet<Game> Game => Set<Game>();
-        public DbSet<Company> Company => Set<Company>();
+        public DbSet<Person> Person => Set<Person>();
     }
 }

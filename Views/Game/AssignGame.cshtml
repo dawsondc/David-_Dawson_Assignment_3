@@ -2,8 +2,8 @@
 @model IEnumerable<David__Dawson_Assignment_3.Models.Entities.Game>
 
 @{
-    var company = (Company?)ViewData["Company"];
-    ViewData["Title"] = $"Assign game for {company!.Name}";
+    var person = (Person?)ViewData["Person"];
+    ViewData["Title"] = $"Assign game for {person!.FirstName} {person!.LastName}";
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -36,15 +36,11 @@
                 @Html.DisplayFor(modelItem => item.Genre)
             </td>
             <td>
-                
-                <a asp-action="Create" asp-controller="CompanyGameDevelopment"
-                 asp-route-id="@company!.companyID" 
-                 asp-route-gameID="@item.gameID">Assign</a>        
+                <a asp-action="Create" asp-controller="PersonGame"
+                            asp-route-id="@person!.personID" 
+                            asp-route-gameId="@item.gameID">Assign</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
-<div>
-    <a asp-action="Details" asp-controller="Company" asp-route-id="@company.companyID">Back to Company Details</a>
-</div>

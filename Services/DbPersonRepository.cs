@@ -3,27 +3,27 @@ using Microsoft.EntityFrameworkCore;
 
 namespace David__Dawson_Assignment_3.Services
 {
-    public class DbGameRepository : IGameRepository
+    public class DbPersonRepository : IPersonRepository
     {
         private readonly GameDbContext _db;
 
-        public DbGameRepository(GameDbContext db)
+        public DbPersonRepository(GameDbContext db)
         {
             _db = db;
         }
-        public Game? Read(int ID)
+        public Person? Read(int ID)
         {
-            return _db.Game
+            return _db.Person
            .Include(x => x.PersonRating)
-              .ThenInclude(y => y.Person)
-           .FirstOrDefault(x => x.gameID == ID);
+              .ThenInclude(y => y.Game)
+           .FirstOrDefault(x => x.personID == ID);
         }
 
-        public ICollection<Game> ReadAll()
+        public ICollection<Person> ReadAll()
         {
-            return _db.Game
+            return _db.Person
            .Include(x => x.PersonRating)
-              .ThenInclude(y => y.Person)
+              .ThenInclude(y => y.Game)
               .ToList();
         }
     }

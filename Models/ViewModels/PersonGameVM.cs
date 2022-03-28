@@ -2,9 +2,9 @@
 
 namespace David__Dawson_Assignment_3.Models.ViewModels
 {
-    public class CompanyGameVM
+    public class PersonGameVM
     {
-        public Company? Company { get; set; }
+        public Person? Person { get; set; }
         public Game? Game { get; set; }
     }
 }

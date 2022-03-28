@@ -5,29 +5,29 @@ namespace David__Dawson_Assignment_3.Controllers
 {
     public class GameController : Controller
     {
-        private ICompanyRepository _companyRepo;
+        private IPersonRepository _personRepo;
         private IGameRepository _gameRepo;
 
-        public GameController(ICompanyRepository companyRepo, IGameRepository gameRepo)
+        public GameController(IPersonRepository personRepo, IGameRepository gameRepo)
         {
-            _companyRepo = companyRepo;
+            _personRepo = personRepo;
             _gameRepo = gameRepo;
         }
 
-        public IActionResult AssignGame([Bind(Prefix ="ID")]int companyID)
+        public IActionResult AssignGame([Bind(Prefix ="id")]int personID)
         {
 
-            var game = _gameRepo.Read(companyID);
+            var person = _personRepo.Read(personID);
 
-            if(game == null)
+            if(person == null)
             {
-                return RedirectToAction("Index", "Company");
+                return RedirectToAction("Index", "Person");
             }
             var allGames = _gameRepo.ReadAll();
-            var gameSelect = game.GameBudget
+            var personGames = person.PersonRating
                 .Select(x => x.Game).ToList();
-            var gameNotSelected = allGames.Except(gameSelect);
-            ViewData["Game"] = game;
+            var gameNotSelected = allGames.Except(personGames);
+            ViewData["Person"] = person;
 
             return View(gameNotSelected);
         }

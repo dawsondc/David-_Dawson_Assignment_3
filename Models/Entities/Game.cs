@@ -7,6 +7,6 @@
         public string Genre  { get; set; } = String.Empty;
 
 
-        public ICollection<CompanyGameDevelopment> GameBudget { get; set; } = new List<CompanyGameDevelopment>();
+        public ICollection<PersonGame> PersonRating { get; set; } = new List<PersonGame>();
     }
 }

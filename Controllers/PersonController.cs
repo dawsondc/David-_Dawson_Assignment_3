@@ -3,28 +3,28 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace David__Dawson_Assignment_3.Controllers
 {
-    public class CompanyController : Controller
+    public class PersonController : Controller
     {
-        private ICompanyRepository _companyRepo;
+        private IPersonRepository _personRepo;
 
-        public CompanyController(ICompanyRepository companyRepo)
+        public PersonController(IPersonRepository personRepo)
         {
-            _companyRepo = companyRepo;
+            _personRepo = personRepo;
         }
 
         public IActionResult Index()
         {
-            return View(_companyRepo.ReadAll());
+            return View(_personRepo.ReadAll());
         }
 
         public IActionResult Details(int ID)
         {
-            var company = _companyRepo.Read(ID);
-            if (company == null)
+            var person = _personRepo.Read(ID);
+            if (person == null)
             {
                 return RedirectToAction("Index");
             }
-            return View(company);
+            return View(person);
         }
     }
 }

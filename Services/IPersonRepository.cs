@@ -2,9 +2,9 @@
 
 namespace David__Dawson_Assignment_3.Services
 {
-    public interface ICompanyRepository
+    public interface IPersonRepository
     {
-        Company? Read(int ID);
-        ICollection<Company> ReadAll();
+        Person? Read(int ID);
+        ICollection<Person> ReadAll();
     }
 }

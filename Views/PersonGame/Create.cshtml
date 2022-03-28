@@ -1,0 +1,19 @@
+﻿@model David__Dawson_Assignment_3.Models.ViewModels.PersonGameVM
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h3>
+    Are you sure you want to assign @Model!.Person!.FirstName @Model!.Person!.LastName
+    for @Model!.Game!.Name?
+</h3>
+    
+    
+    <form asp-action="Create">
+        <input type="hidden" name="personID" value="@Model.Person.personID" />
+        <input type="hidden" name="gameID" value="@Model.Game.gameID" />
+        <input type="submit" value="Assign Game" class="btn btn-danger" />
+        <a asp-action="AssignGame" asp-controller="Game"
+            asp-route-id="@Model!.Person!.personID">Don't Assign</a>
+    </form>

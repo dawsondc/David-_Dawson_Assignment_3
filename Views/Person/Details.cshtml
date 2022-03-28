@@ -1,0 +1,82 @@
+﻿@model David__Dawson_Assignment_3.Models.Entities.Person
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Person</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.personID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.personID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="AssignGame" asp-controller="Game" asp-route-id="@Model!.personID">Assing Game</a> |
+    <a asp-action="Index">Back to Person List</a>
+</div>
+<h3>Assign Game</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Game ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Rating
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var item in Model.PersonRating)
+            {
+                <tr>
+                    <td>
+                        @item.Game!.gameID
+                    </td>
+                    <td>
+                        @item.Game!.Name
+                    </td>
+                    <td>
+                        @item.Rating
+                    </td>
+                    <td>
+                        <a asp-action="AssignGame" asp-controller="PersonGame"
+                            asp-route-id="@Model!.personID" asp-route-gameID="@item.gameID">
+                            Assign Grade
+                        </a> |
+                        <a asp-action="Delete" asp-controller="PersonGame"
+                            asp-route-id="@Model!.personID" asp-route-courseId="@item.gameID">
+                            Remove Game
+                        </a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+ </table>

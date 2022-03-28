@@ -9,9 +9,9 @@ builder.Services.AddDbContext<GameDbContext>(options =>
       options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<Initializer>();
-builder.Services.AddScoped<ICompanyRepository, DbCompanyRepository>();
+builder.Services.AddScoped<IPersonRepository, DbPersonRepository>();
 builder.Services.AddScoped<IGameRepository, DbGameRepository>();
-builder.Services.AddScoped<ICompanyGameDevelopmentRepository, DbCompanyGameDevelopmentRepository>();
+builder.Services.AddScoped<IPersonGameRepository, DbPersonGameRepository>();
 
 var app = builder.Build();
 SeedData(app);

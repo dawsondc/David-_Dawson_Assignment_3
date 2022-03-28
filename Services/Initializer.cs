@@ -15,23 +15,23 @@ namespace David__Dawson_Assignment_3.Services
         {
             _db.Database.EnsureCreated();
 
-            // If there are any companies then assume the database is already
+            // If there are any people then assume the database is already
             // seeded.
-            if (_db.Company.Any()) return;
+            if (_db.Person.Any()) return;
 
-            var companies = new List<Company>
+            var people = new List<Person>
         {
-           new Company
-              { Name = "From Software"},
-           new Company
-              { Name = "Bethesda"},
-           new Company
-              { Name = "Nintendo"},
-           new Company
-              { Name = "Game Freak"}
+           new Person
+              { FirstName = "Cameron", LastName = "Dawson"},
+           new Person
+              { FirstName = "James", LastName = "Frank"},
+           new Person
+              { FirstName = "Matt", LastName = "Murdock"},
+           new Person
+              { FirstName = "Frank", LastName = "Castle"}
         };
 
-            _db.Company.AddRange(companies);
+            _db.Person.AddRange(people);
             _db.SaveChanges();
 
             var game = new List<Game>
