@@ -67,7 +67,7 @@ namespace David__Dawson_Assignment_3.Controllers
         }
 
         [HttpPost, ValidateAntiForgeryToken, ActionName("AssignGame")]
-        public IActionResult AssignGameConfirmed(int personID, int ID, string rating)
+        public IActionResult AssignGameConfirmed(int personID, int personGameID, string rating)
         {
             _personGameRepository.UpdateGameRating(personID, rating);
             return RedirectToAction("Details", "Person", new { id = personID });

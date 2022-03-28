@@ -13,10 +13,7 @@
         <form asp-action="AssignGame">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" name="personGameID" value="@Model!.personID" />
-            <div class="form-group">
-                <input asp-for="personGameID" class="form-control" />
-                <span asp-validation-for="personGameID" class="text-danger"></span>
-            </div>
+             <input type="hidden" name="personID" value="@Model!.personID" />
             <div class="form-group">
                 <label asp-for="Rating" class="control-label"></label>
                 <input asp-for="Rating" class="form-control" />
