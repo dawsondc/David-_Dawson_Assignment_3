@@ -100,7 +100,7 @@ namespace David__Dawson_Assignment_3.Migrations
                         .IsRequired();
 
                     b.HasOne("David__Dawson_Assignment_3.Models.Entities.Person", "Person")
-                        .WithMany("PersonRating")
+                        .WithMany("GameRating")
                         .HasForeignKey("personID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -117,7 +117,7 @@ namespace David__Dawson_Assignment_3.Migrations
 
             modelBuilder.Entity("David__Dawson_Assignment_3.Models.Entities.Person", b =>
                 {
-                    b.Navigation("PersonRating");
+                    b.Navigation("GameRating");
                 });
 #pragma warning restore 612, 618
         }

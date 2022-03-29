@@ -2,15 +2,25 @@
 
 namespace David__Dawson_Assignment_3.Services
 {
+    /// <summary>
+    /// initializer to load data into database
+    /// </summary>
     public class Initializer
     {
         private readonly GameDbContext _db;
 
+        /// <summary>
+        /// instance of repository giving it the DB Context
+        /// </summary>
+        /// <param name="db">repesents the context file</param>
         public Initializer(GameDbContext db)
         {
             _db = db;
         }
 
+        /// <summary>
+        /// seeding the database with data
+        /// </summary>
         public void SeedDatabase()
         {
             _db.Database.EnsureCreated();

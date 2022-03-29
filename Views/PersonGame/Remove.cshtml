@@ -1,0 +1,19 @@
+﻿@model David__Dawson_Assignment_3.Models.Entities.PersonGame
+
+@{
+    var person = Model!.Person;
+    var game = Model!.Game;
+    ViewData["Title"] = $"Please confirm removing of {game!.Name}";
+    var question = $"Are you sure you want to remove {game!.Name} " +
+        $"from {person!.FirstName} {person!.LastName}?";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@question</h3>
+<div>
+    <form asp-action="Remove">
+        <input type="hidden" name="personGameID" value="@Model!.personGameID" />
+        <input type="hidden" name="personID" value="@person!.personID" />
+        <input type="submit" value="Remove Game" class="btn btn-danger" /> |
+        <a asp-action="Details" asp-controller="Person" asp-route-id="@person!.personID">Back to Person Details</a>
+    </form>
+</div>

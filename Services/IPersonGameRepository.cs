@@ -8,5 +8,6 @@ namespace David__Dawson_Assignment_3.Services
         ICollection<PersonGame> ReadAll();
         PersonGame? Create(int personID, int gameID);
         void UpdateGameRating(int personGameID, string rating);
+        void Remove(int personID, int personGameID);
     }
 }

@@ -53,7 +53,7 @@
     <tbody>
         @if (Model != null)
         {
-            @foreach (var item in Model.PersonRating)
+            @foreach (var item in Model.GameRating)
             {
                 <tr>
                     <td>
@@ -67,9 +67,9 @@
                     </td>
                     <td>
                         <a asp-action="AssignGame" asp-controller="PersonGame"
-                            asp-route-id="@Model!.personID" asp-route-gameID="@item.gameID">Assign Game</a> |
-                        <a asp-action="Delete" asp-controller="PersonGame"
-                            asp-route-id="@Model!.personID" asp-route-courseId="@item.gameID">Remove Game</a>  
+                            asp-route-id="@Model!.personID" asp-route-gameID="@item.gameID">Assign Rating</a> |
+                        <a asp-action="Remove" asp-controller="PersonGame"
+                            asp-route-id="@Model!.personID" asp-route-gameID="@item.gameID">Remove Game</a>  
                     </td>
                 </tr>
             }

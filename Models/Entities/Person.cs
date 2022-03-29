@@ -7,6 +7,6 @@
         public string LastName { get; set; } = String.Empty;
 
 
-        public ICollection<PersonGame> PersonRating { get; set; } = new List<PersonGame>();
+        public ICollection<PersonGame> GameRating { get; set; } = new List<PersonGame>();
     }
 }

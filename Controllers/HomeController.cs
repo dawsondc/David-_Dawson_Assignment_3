@@ -13,6 +13,10 @@ namespace David__Dawson_Assignment_3.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// index view
+        /// </summary>
+        /// <returns>redirects the user to the Person view</returns>
         public IActionResult Index()
         {
             return RedirectToAction("Index", "Person");
