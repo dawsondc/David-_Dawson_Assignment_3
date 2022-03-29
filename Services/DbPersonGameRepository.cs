@@ -113,7 +113,7 @@ namespace David__Dawson_Assignment_3.Services
         {
             var person = _personRepo.Read(personID);
             var personGame = person!.GameRating
-                .FirstOrDefault(x => x.personID == personGameID);
+                .FirstOrDefault(x => x.personGameID == personGameID);
             var game = personGame!.Game;
             person!.GameRating.Remove(personGame);
             game!.PersonRating.Remove(personGame);
