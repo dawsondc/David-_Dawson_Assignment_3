@@ -50,6 +50,7 @@ namespace David__Dawson_Assignment_3.Controllers
             {
                 return RedirectToAction("Details", "Person", new { ID = personID });
             }
+            //instance of view model assigning vars to the properties
             var personGameVM = new PersonGameVM
             {
                 Person = person,

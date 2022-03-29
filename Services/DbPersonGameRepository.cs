@@ -77,6 +77,7 @@ namespace David__Dawson_Assignment_3.Services
                 // The game was not found
                 return null;
             }
+            //instance of view model assigning vars to the properties
             var PersonGameRating = new PersonGame
             {
                 Person = person,

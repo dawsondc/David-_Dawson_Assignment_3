@@ -31,6 +31,7 @@ namespace David__Dawson_Assignment_3.Services
 
             var people = new List<Person>
         {
+            //Adding people
            new Person
               { FirstName = "Cameron", LastName = "Dawson"},
            new Person
@@ -46,6 +47,7 @@ namespace David__Dawson_Assignment_3.Services
 
             var game = new List<Game>
         {
+            //Adding games
            new Game
             { Name = "Elden Ring", Genre = "RPG/Adventrue" },
            new Game 
