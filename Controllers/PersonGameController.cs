@@ -143,5 +143,28 @@ namespace David__Dawson_Assignment_3.Controllers
             return RedirectToAction("Details", "Person", new { id = personID });
         }
 
+        /// <summary>
+        /// WIll show a list of people with the games they are playing with theratings for each
+        /// </summary>
+        /// <returns>will return a list of people with the games they are playing with thier ratings for the game</returns>
+        public IActionResult PersonGameList()
+        {
+            ViewData["Message"] = "Games Currently Being Played";
+            var person = _personRepo.ReadAll();
+            var personGameList =
+            _personGameRepository.ReadAll();
+            var model = from x in person
+                        join y in personGameList
+                        on x.personID equals y.personID
+                        orderby x.LastName, x.FirstName
+                        select new GameListVM
+                        {
+                            Person = x.FirstName + " " + x.LastName,
+                            Game = y.Game!.Name,
+                            Rating = y.Rating
+                        };
+            return View(model);
+        }
+
     }
 }
