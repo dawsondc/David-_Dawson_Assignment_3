@@ -17,7 +17,7 @@
 })();
 
 function populateTable(result) {
-    const tableBody = document.getElementById("tableBody");
+    const Table = document.getElementById("Table");
     result.forEach((item) => {
         const tr = document.createElement("tr");
         for (let key in item) {
@@ -30,6 +30,6 @@ function populateTable(result) {
             td.appendChild(Node);
             tr.appendChild(td)
         }
-        tableBody.appendChild(tr);
+        Table.appendChild(tr);
     });
 }
