@@ -26,6 +26,14 @@ namespace David__Dawson_Assignment_3.Controllers
             _personGameRepository = personGameRepo;
         }
 
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+
+
         /// <summary>
         /// Create view
         /// </summary>

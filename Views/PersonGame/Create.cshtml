@@ -17,3 +17,7 @@
         <a asp-action="AssignGame" asp-controller="Game"
             asp-route-id="@Model!.Person!.personID">Don't Assign</a>
     </form>
+
+    @section Scripts{
+    <script defer src="~/js/personGameCreate.js"></script>
+}

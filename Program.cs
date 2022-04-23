@@ -3,6 +3,20 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//Giving Postman Access
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+       builder =>
+       {
+           builder.WithOrigins("https://web.postman.co")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+       });
+});
+
+
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<GameDbContext>(options =>
@@ -28,6 +42,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseCors();
 
 app.UseAuthorization();
 

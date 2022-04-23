@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace David__Dawson_Assignment_3.Migrations
 {
     [DbContext(typeof(GameDbContext))]
-    [Migration("20220329225102_Mig01")]
+    [Migration("20220422231123_Mig01")]
     partial class Mig01
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

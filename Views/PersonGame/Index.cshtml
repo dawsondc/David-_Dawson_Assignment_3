@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Games Currently Being Played";
+}
+
+<h1>@ViewData["Message"]</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Person
+            </th>
+            <th>
+                Game
+            </th>
+            <th>
+                Rating
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        </tbody>
+</table>
+
+@section Scripts{
+    <script defer src="~/js/personGameList.js"></script>
+}

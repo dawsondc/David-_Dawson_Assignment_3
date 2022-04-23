@@ -60,6 +60,10 @@ namespace David__Dawson_Assignment_3.Services
 
             _db.Game.AddRange(game);
             _db.SaveChanges();
+
+
         }
+
+
     }
 }
