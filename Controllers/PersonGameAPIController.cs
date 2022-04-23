@@ -64,7 +64,7 @@ namespace David__Dawson_Assignment_3.Controllers
                             Rating = y.Rating
                         };
 
-            return Ok();
+            return Ok(model);
         }
     }
 }
