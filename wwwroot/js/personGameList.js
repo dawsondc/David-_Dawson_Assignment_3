@@ -1,10 +1,11 @@
-﻿"use strict";
+﻿//java script to interact with the api and the rest of the project
+"use strict";
 (function _personGameList() {
     const url = "api/persongameapi/playthroughs";
     fetch(url)
         .then(response => {
             if (!response.ok) {
-                throw new Error('There was an error');
+                throw new Error('There was an error'); //404 error for if something happens
             }
             return response.json();
         })
@@ -16,6 +17,7 @@
         });
 })();
 
+//populating the view with the correct info about each entry
 function populateTable(result) {
     const Table = document.getElementById("Table");
     result.forEach((item) => {

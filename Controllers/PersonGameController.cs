@@ -26,7 +26,10 @@ namespace David__Dawson_Assignment_3.Controllers
             _personGameRepository = personGameRepo;
         }
 
-
+        /// <summary>
+        /// base action result to be used for the JSON output from the API
+        /// </summary>
+        /// <returns>the view of the extra funtion in JSON from the API</returns>
         public IActionResult Index()
         {
             return View();

@@ -6,12 +6,21 @@ namespace David__Dawson_Assignment_3.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    /// <summary>
+    /// Class to hold controller and its functions for the API
+    /// </summary>
     public class PersonGameAPIController : ControllerBase
     {
         private readonly IPersonRepository _personRepo;
         private readonly IGameRepository _gameRepo;
         private readonly IPersonGameRepository _personGameRepo;
 
+        /// <summary>
+        /// instance of controller with passthrough instances of the interfaces
+        /// </summary>
+        /// <param name="personRepo"></param>
+        /// <param name="gameRepo"></param>
+        /// <param name="personGameRepo"></param>
         public PersonGameAPIController(IPersonRepository personRepo, IGameRepository gameRepo, IPersonGameRepository personGameRepo)
         {
             _personRepo = personRepo;
@@ -19,6 +28,12 @@ namespace David__Dawson_Assignment_3.Controllers
             _personGameRepo = personGameRepo;
         }
 
+        /// <summary>
+        /// Post method for adding a game to a person
+        /// </summary>
+        /// <param name="personID"></param>
+        /// <param name="gameID"></param>
+        /// <returns>adds game to person through API</returns>
         [HttpPost("create")]
         public IActionResult Post([FromForm] int personID, [FromForm] int gameID)
         {
@@ -31,6 +46,13 @@ namespace David__Dawson_Assignment_3.Controllers
             return CreatedAtAction("Get", new { ID = personGameRating?.personGameID }, personGameRating);
         }
 
+        /// <summary>
+        /// put to update game entry to assign rating through API
+        /// </summary>
+        /// <param name="personID"></param>
+        /// <param name="personGameID"></param>
+        /// <param name="Rating"></param>
+        /// <returns>rating to game entry</returns>
         [HttpPut("assignrating")]
         public IActionResult Put([FromForm] int personID, [FromForm] int personGameID, [FromForm] string Rating)
         {
@@ -39,6 +61,12 @@ namespace David__Dawson_Assignment_3.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// deleting whole entry from person
+        /// </summary>
+        /// <param name="personID"></param>
+        /// <param name="personGameID"></param>
+        /// <returns>deleted entry</returns>
         [HttpDelete("delete")]
         public IActionResult Delete([FromForm] int personID, [FromForm] int personGameID)
         {
@@ -46,6 +74,10 @@ namespace David__Dawson_Assignment_3.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// additonal function
+        /// </summary>
+        /// <returns>displays list of people with game they are play and the rating, should be in order by last name</returns>
         [HttpGet("playthroughs")]
         public IActionResult Get()
         {
