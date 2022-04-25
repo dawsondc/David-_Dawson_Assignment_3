@@ -3,9 +3,9 @@
 (function _personGameRating() {
     const formRating =
         document.querySelector("#formRating");
-    formRating.addEventListener('submit', e => {
-        e.preventDefault();
-        const url = "/api/persongameapi/assignrating";
+    formRating.addEventListener('submit', x => {
+        x.preventDefault();
+        const url = "/api/persongameapi/assignrating";//url to direct to the controller methods
         const method = "put";
         const formData = new FormData(formRating);
         console.log(`${url} ${method}`);

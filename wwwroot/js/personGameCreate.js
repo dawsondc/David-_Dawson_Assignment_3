@@ -4,9 +4,9 @@
 (function _personGameCreate() {
     const formCreatePersonGame =
         document.querySelector("#formCreatePersonGame");
-    formCreatePersonGame.addEventListener('submit', e => {
-        e.preventDefault();
-        const url = "/api/persongameapi/create";
+    formCreatePersonGame.addEventListener('submit', x => {
+        x.preventDefault();
+        const url = "/api/persongameapi/create";//url to direct to the controller methods
         const method = "post";
         const formData = new FormData(formCreatePersonGame);
         console.log(`${url} ${method}`);

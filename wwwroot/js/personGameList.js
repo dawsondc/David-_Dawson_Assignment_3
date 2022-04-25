@@ -1,7 +1,7 @@
 ﻿//java script to interact with the api and the rest of the project
 "use strict";
 (function _personGameList() {
-    const url = "api/persongameapi/playthroughs";
+    const url = "api/persongameapi/playthroughs";//url to direct to the controller methods
     fetch(url)
         .then(response => {
             if (!response.ok) {

@@ -13,7 +13,7 @@
     <form asp-action="Remove">
         <input type="hidden" name="personGameID" value="@Model!.personGameID" />
         <input type="hidden" name="personID" value="@person!.personID" />
-        <input type="submit" value="Remove Game" class="btn btn-danger" /> |
+        <input type="submit" value="Remove Game" class="btn btn-dark" /> |
         <a asp-action="Details" asp-controller="Person" asp-route-id="@person!.personID">Back to Person Details</a>
     </form>
 </div>

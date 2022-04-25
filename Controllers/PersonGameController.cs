@@ -30,7 +30,7 @@ namespace David__Dawson_Assignment_3.Controllers
         /// base action result to be used for the JSON output from the API
         /// </summary>
         /// <returns>the view of the extra funtion in JSON from the API</returns>
-        public IActionResult Index()
+        public IActionResult RawJson()
         {
             return View();
         }

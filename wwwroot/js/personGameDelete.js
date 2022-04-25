@@ -3,9 +3,9 @@
 (function _personGameDelete() {
     const Delete =
         document.querySelector("#Delete");
-    Delete.addEventListener('submit', e => {
-        e.preventDefault();
-        const url = "/api/persongameapi/delete";
+    Delete.addEventListener('submit', x => {
+        x.preventDefault();
+        const url = "/api/persongameapi/delete";//url to direct to the controller methods
         const method = "delete";
         const formData = new FormData(Delete);
         console.log(`${url} ${method}`);
