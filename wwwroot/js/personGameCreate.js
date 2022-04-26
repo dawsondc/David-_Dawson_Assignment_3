@@ -1,5 +1,4 @@
-﻿
-//java script to interact with the api and the rest of the project
+﻿//java script to interact with the api and the rest of the project
 "use strict";
 (function _personGameCreate() {
     const formCreatePersonGame =
